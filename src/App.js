@@ -6,8 +6,9 @@ import Home from "./component/home/Home";
 import About from "./component/about/About"
 import Contact from "./component/contact/Contact";
 import Navbar from "./component/navbar/Navbar";
+import MyShoppingList  from "./component/myShoppingList/MyShoppingList";
 
-function App() {
+export default function App () {
   return (
         <Router>
 
@@ -24,10 +25,13 @@ function App() {
 
             <Route exact path="/contact">
               <Contact />
-              </Route>
+            </Route>
+
+            <Route exact path="/shoppingList">
+              <MyShoppingList />
+            </Route>
           </Switch>
           </Router>
   );
 }
 
-export default App;
