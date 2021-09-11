@@ -2,18 +2,17 @@ import React, { useState } from 'react'
 
 export default function MyShoppingList () {
   const [ myListTittle, setMyListTittle ] = useState("");
-  const [ myList, setMyList ] = useState(["buy Milk", "buy Eggs", "Code  more"]);
-  const [ inputShoppingList,  setInputShoppingList ] = useState("");
+  const [ todos, setTodos ] = useState(["buy Milk", "buy Eggs", "Code  more"]);
+  const [ input,  setInput ] = useState("");
 
-  console.log("😻 ",inputShoppingList )
-  const addTitleList = (e) => {
+  const addTittle = (e) => {
     setMyListTittle(e.target.value)
     console.log(myListTittle)
   }
 
-  const addMyShoppingList = () => {
+  const addTodo = () => {
     console.log("💟 ", "I am working");
-    setMyList([inputShoppingList, ...myList])
+    setTodos([input, ...todos])
   }
 
   return (
@@ -21,17 +20,17 @@ export default function MyShoppingList () {
       <h1>Shopping List</h1>
       <div>
         <h2>
-          <input value={ myListTittle } onChange={addTitleList}/>
+          <input value={ myListTittle } onChange={addTittle}/>
         </h2>
       </div>
 
-      <input value={inputShoppingList}  onChange={e=> setInputShoppingList(e.target.value)}/>
-      <button onClick= {addMyShoppingList}>Add to my List</button>
+      <input value={input}  onChange={e=> setInput(e.target.value)}/>
+      <button onClick= {addTodo}>Add to my List</button>
 
       <div>
         <h2>{myListTittle}</h2>
         <ul>
-          {myList.map(list =>(
+          {todos.map(list =>(
             <li>{list}</li>))}
         </ul>
       </div>
