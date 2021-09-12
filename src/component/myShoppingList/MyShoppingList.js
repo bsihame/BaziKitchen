@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
+import Todo from "./Todo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,8 +56,9 @@ export default function MyShoppingList() {
       <h2>{myListTittle}</h2>
       <div>
         <ul>
-          {todos.map((list) => (
-            <li>{list}</li>
+          {todos.map((todo) => (
+            <Todo text={todo} />      
+                 // <li>{todo}</li>
           ))}
         </ul>
       </div>
